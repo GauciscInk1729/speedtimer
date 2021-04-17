@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Belgrano&display=swap');
+* {
+  box-sizing: border-box;
+  margin:0;
+}
+aside::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+aside::-webkit-scrollbar-button:increment,aside::-webkit-scrollbar-button {
+    display: none;
+} 
+
+aside::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+aside::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+aside::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+aside {
+    /*Estilos estándar experimentales (Principalmente Firefox)*/
+    scrollbar-color: rgba(0, 0, 0, .3) rgba(0, 0, 0, 0);
+    scrollbar-width: thin;
+}
+body{
+	display:flex;
+	flex-direction:column;
+	align-items: center;
+	text-align: center;
+	overflow-x:hidden;
+	background-image:linear-gradient(65deg,hsl(60, 100%, 80%),hsl(60, 100%, 90%));
+}
+header{
+	position: fixed;
+	background-image:linear-gradient(35deg,hsl(150, 100%, 50%),hsl(150, 100%, 65%),hsl(150, 100%, 70%));
+	width:100%;
+	text-align:center;
+	padding:1%;
+	z-index:1;
+}
+main{
+	display:flex;
+	flex-direction:row-reverse;
+	justify-content:center;
+	margin-left:15%;
+	margin-top:4%;
+	width:83vw;
+}
+aside{
+	display: flex;
+	flex-direction:column;
+	align-items:center;
+	text-align:justify;
+	background-color:hsla(300, 100%, 90%,80%); 
+	border-radius:25px;
+	overflow-y:auto;
+	font-family: 'Work Sans', sans-serif;
+	font-size:19px;
+	overflow-x:hidden;
+}
+#detalles{
+	padding:5px;
+}
+#timesTable tr:nth-child(odd){
+	background-color:hsl(48, 100%, 80%);
+}
+#timesTable tr:nth-child(even){
+	background-color: pink;
+}
+#timesTable{
+	margin:15px;
+}
+#timesTable,#timesTable th,#timesTable td{
+	border-left:1px solid hsla(0, 10%, 55%,100%);
+	border-right: 1px solid hsla(0,10%,55%,100%);
+	border-collapse: collapse;
+}
+#timesTable th{
+	position: sticky;
+	position:-webkit-sticky; 
+	top:0;
+	background-color:hsl(0, 100%, 83%);
+	border-top:1px solid hsla(0, 10%, 55%,100%);
+	border-bottom:1px solid hsla(0, 10%, 55%,100%);
+}
+th,td{
+	padding: 10px;
+}
+#scramble{
+	font-size:2.2em;
+	font-family: 'Comfortaa', cursive;
+	color:#444;
+	margin-top:2%;
+}
+#clock{
+	font-size:5em;
+	margin:5% auto;
+	white-space:nowrap;
+}
+#scrambleText{
+	font-family: 'Montserrat', sans-serif;
+	margin-top:6%;
+	font-size:2.6em;
+}
+#description{
+    font-family: 'Belgrano', serif;
+	font-size:1.3em;
+	color:#544;
+}
+[id*="delete"]:hover,[id*="delete"]:active{
+	cursor:pointer;
+	scale:1.5;
+	color:red;
+}
+.unselected{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none; 
+}
+@media (orientation: landscape){
+	aside{
+		position:absolute;
+		left: 0.5%;
+		height:70%;
+		width:17vw;
+		margin-top: 3%;
+	}
+	#scramble{
+		font-size:2.1em;
+	}
+	#scrambleText{
+		font-size:2em;
+	}
+	aside{
+		width:auto;
+	}
+}
+@media (max-width: 1000px){
+	main{
+		width: 100%;
+	}
+	#scramble{
+	font-size:1.1em;
+	margin-top:5%;
+	}
+	#scrambleText{
+	margin-top:15%;
+	font-size:2em;
+	}
+  #clock{
+  	font-size:3.5em;
+    margin:0;
+    padding:0.2em;
+  }
+  #description{
+  	font-size:0.9em;
+  	margin-bottom:5%;
+  }
+  main{
+  	flex-direction:column;
+  	justify-content: center;
+  	align-items:center;
+  	margin:0;
+  }
+  aside{
+  	height:45vh;
+  	width:auto;
+  }
+}
+@media (max-width:1050px) and (orientation: landscape){
+	main > div{
+		margin-top:10%;
+		margin-left:11%;
+		width:90%;
+	}
+	main{
+		width:100%;
+	}
+	#scramble{
+		margin-top: 0;
+		font-size:1.3em;
+	}
+	#scrambleText{
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size:20px;
+	}
+  #clock{
+  	margin-top:0%;
+  	font-size:3em;
+  }
+	aside{
+		position:absolute;
+		left: 0.5%;
+		height:45vh;
+		width:17vw;
+		margin-top: 10%;
+		border-radius:15px;
+		padding-top:5px;
+	}
+	th,td{
+		padding: 5px;
+	}
+	main{
+		overflow-x:hidden;
+	}
+}
+@media (max-width:490px){
+	#scrambleText{
+		font-size:150%;
+	}
+	#scramble{
+		font-size:80%;
+	}
+	#description{
+		font-size:65%;
+	}
+	#detalles{
+		font-size:70%;
+	}
+	th,td{
+		padding: 8px;
+	}
+}
+@media (min-width:600px){
+	#scramble{
+		font-size:130%;
+	}
+	#clock{
+		padding:6%;
+	}
+	th,td{
+		padding: 5px;
+	}
+}
+@media (min-width:1050px) and (orientation: landscape){
+	#scramble{
+		font-size:2.3em;
+	}
+}
